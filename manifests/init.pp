@@ -34,19 +34,19 @@ class thrift {
 
   package { $pkgs:
     ensure => present,
-    before => Instool['thrift-0.9.0'],
+    before => Instool['thrift-0.9.1'],
   }
 
   #package { 'rspec':
   #  ensure   => 'installed',
   #  provider => 'gem',
-  #  before   => Instool['thrift-0.9.0'],
+  #  before   => Instool['thrift-0.9.1'],
   #}
 
-  instool { "thrift-0.9.0":
-    url  => "https://dist.apache.org/repos/dist/release/thrift/0.9.0/thrift-0.9.0.tar.gz",
+  instool { "thrift-0.9.1":
+    url  => "https://dist.apache.org/repos/dist/release/thrift/0.9.1/thrift-0.9.1.tar.gz",
     onlyif => [
-      "test ! -x /usr/local/bin/thrift"
+      "test ! -x /usr/local/bin/thrift || thrift -version | grep -qv 0.9.1"
     ]
   }
 }

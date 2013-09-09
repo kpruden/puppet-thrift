@@ -1,5 +1,5 @@
 name         'adcade-thrift'
-version      '0.1.0'
+version      '0.2.0'
 summary      'Download, compile and install thrift'
 description  'Download, compile and install thrift'
 author       'Yangming Huang'
